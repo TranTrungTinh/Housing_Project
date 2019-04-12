@@ -1,11 +1,28 @@
-.header {
+@import '@/styles/app.scss';
 
+.header {
     &-desktop {
 
         &--left {
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-around;
+
+            &__position {
+                display: flex;
+                align-items: center;
+
+                &_city {
+                    margin: 0 15px 2px 0; 
+                    padding: 0 10px;
+                    height: 40px;
+                    border: 1px solid #C8C7CC;
+                    text-align: center;
+                    color: #FD3D76;
+                    line-height: 40px;
+                    border-radius: 8px;
+                }
+            }
         }
     }
 
@@ -17,6 +34,7 @@
 
         display: flex;
         align-items: center;
+        float: right;
     
         &--item {
             margin: 0 20px;
@@ -24,5 +42,30 @@
             font-weight: 600;
             cursor: pointer;
         }
+
+        &--user {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100px;
+            
+            &__avatar {
+                cursor: pointer;
+            }
+
+            &__noti {
+                cursor: pointer;
+                height: 50px;
+
+                & i {
+                    font-size: 28px;
+                    padding: 0 5px;
+                }
+            }
+        }
     }
+}
+
+.blue {
+    color: #3E74FF;
 }

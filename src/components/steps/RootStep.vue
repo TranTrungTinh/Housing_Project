@@ -1,46 +1,33 @@
 <template>
-<div class="container">
   <div class="steps">
     <div class="steps-status">
       <a-steps class="steps-wrap" :current="current" direction="vertical" size="small">
-        <a-step 
-          v-for="(item, i) in steps" :key="i" :title="item.title" 
+        <a-step
+          v-for="(item, i) in steps"
+          :key="i"
+          :title="item.title"
           :class="{'steps-wrap--item' : current === i}"
         />
       </a-steps>
       <div class="steps-content">
-        <FirstStep  v-if="current % 2 === 0"/>
+        <FirstStep v-if="current % 2 === 0"/>
         <SecondStep v-else/>
       </div>
     </div>
     <div class="steps-action">
-      <a-button
-        v-if="current < steps.length - 1"
-        type="primary" @click="next"
-      >
-        Next
-      </a-button>
+      <a-button v-if="current < steps.length - 1" type="primary" @click="next">Next</a-button>
       <a-button
         v-if="current == steps.length - 1"
         type="primary"
         @click="$message.success('Processing complete!')"
-      >
-        Done
-      </a-button>
-      <a-button
-        v-if="current>0"
-        style="margin-left: 8px"
-        @click="prev"
-      >
-        Previous
-      </a-button>
+      >Done</a-button>
+      <a-button v-if="current>0" style="margin-left: 8px" @click="prev">Previous</a-button>
       <p>{{ windowWidth }}</p>
     </div>
   </div>
-</div>
 </template>
 <script>
-import { FirstStep, SecondStep } from '@/components/steps';
+import { FirstStep, SecondStep } from "@/components/steps";
 
 export default {
   components: { FirstStep, SecondStep },
@@ -48,33 +35,33 @@ export default {
     return {
       current: 0,
       steps: [
-        { title: 'First', content: 'First-content' },
-        { title: 'Second', content: 'First-content' },
-        { title: 'Third', content: 'First-content' },
-        { title: 'Fourth', content: 'First-content' },
-        { title: 'Fifth', content: 'First-content' },
-        { title: 'Sixth', content: 'First-content' },
-        { title: 'Seventh', content: 'First-content' },
-        { title: 'Eighth', content: 'First-content' },
-        { title: 'Nineth', content: 'First-content' },
+        { title: "First", content: "First-content" },
+        { title: "Second", content: "First-content" },
+        { title: "Third", content: "First-content" },
+        { title: "Fourth", content: "First-content" },
+        { title: "Fifth", content: "First-content" },
+        { title: "Sixth", content: "First-content" },
+        { title: "Seventh", content: "First-content" },
+        { title: "Eighth", content: "First-content" },
+        { title: "Nineth", content: "First-content" }
       ],
       windowWidth: window.innerWidth
-    }
+    };
   },
   methods: {
     next() {
-      this.current++
+      this.current++;
     },
     prev() {
-      this.current--
+      this.current--;
     }
   },
   mounted() {
-      window.onresize = () => {
-          this.windowWidth = window.innerWidth
-      }
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .steps {
@@ -123,3 +110,4 @@ export default {
 
 }
 </style>
+

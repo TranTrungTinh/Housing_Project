@@ -1,0 +1,120 @@
+<section class="home">
+    <div class="home-bg-cover"></div>
+    <div class="container">
+        <div class="home-welcome">
+            <div class="home-welcome--title">Tìm phòng thật dễ với Housie</div>
+            <div class="home-welcome--form">
+                <div class="home-welcome--form__selected">
+                    <div class="home-welcome--form__selected-tp">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <Selected :selects="city.data" />
+                    </div>
+                    <div class="home-welcome--form__selected-top">
+                        <span>Tôi đang tìm phòng tại:</span>
+                        <div>
+                            <Selected 
+                                :selects="district.data" 
+                                :options="district.options" 
+                                :styles="{color: '#FD3D76', fontSize: '26px'}"
+                            />
+                        </div>
+                    </div>
+                    <div class="home-welcome--form__selected-search">
+                        Tìm kiếm ngay
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-download-app">
+            <div class="home-download-app--title">
+                Tìm thuê phòng linh hoạt hơn với ứng dụng Housie trên điện thoại
+            </div>
+            <div class="home-download-app--button">
+                <span><img src="~@/assets/img/googleplay.svg" alt="Android"></span>
+                <span><img src="~@/assets/img/appstore.svg" alt="iOS"></span>
+            </div>
+        </div>
+    </div>
+    <a-divider></a-divider>
+    <div class="container-fluid">
+
+        <div class="home-card-hire">
+            <a-row type="flex" justify="space-around">
+                <a-col>
+                    <CardHire 
+                        :title="`Tạo tin cần thuê`"
+                        :des="`Chỉ cần tạo tin, housie sẽ báo lại ngay khi có phòng phù hợp`"
+                        :button="`Tạo ngay`"
+                    />
+                </a-col>
+                <a-col>
+                    <CardHire 
+                        :title="`Đăng phòng cho thuê`"
+                        :des="`Đăng phòng dễ dàng, tìm được người thuê nhanh chóng`"
+                        :button="`Đăng ngay`"
+                    />
+                </a-col>
+            </a-row>
+        </div>
+
+        <div class="home-new-room">
+            <div class="home-new-room--title">Phòng mới đăng</div>
+            <div class="home-new-room--list">
+                <a-row :gutter="16">
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+                        <Thumbnail />
+                    </a-col>
+                </a-row>
+            </div>
+            <div class="home-new-room--more">Xem thêm</div>
+        </div>
+
+        <div class="home-new-room">
+            <div class="home-new-room--title">Khám phá</div>
+            <div class="home-new-room--list">
+                <a-row :gutter="16">
+                    <a-col :lg="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :lg="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :lg="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :lg="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :lg="6">
+                        <Thumbnail />
+                    </a-col>
+                    <a-col :lg="6">
+                        <Thumbnail />
+                    </a-col>
+                </a-row>
+            </div>
+            <div class="home-new-room--more">Xem thêm</div>
+        </div>
+    </div>
+</section>
