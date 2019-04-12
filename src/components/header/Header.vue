@@ -26,7 +26,9 @@
             <a-col :xs="12">
                 <div class="header-desktop--right">
                     <div class="header-nav-link">
-                        <div class="header-nav-link--item blue">Đăng phòng</div>
+                        <div class="header-nav-link--item blue">
+                            <router-link to="/post" tag="span">Đăng phòng</router-link>
+                        </div>
                         <div class="header-nav-link--user" v-if="currentUser && currentUser.firstName">
                             <div class="header-nav-link--user__avatar">
                                 <a-avatar :size="42" src="https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg" />

@@ -7,7 +7,7 @@ import Layout from '@/views/app/layout/Layout';
 // @Component
 import HomePage from '@/views/app/Home'
 import User from '@/views/app/User';
-import Post from '@/views/app/PostPage/Post';
+import Post from '@/views/app/PostPage/PostPage';
 
 Vue.use(Router)
 
