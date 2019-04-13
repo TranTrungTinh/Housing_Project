@@ -1,11 +1,13 @@
 <template>
-    <a-select :style="[styles]" :defaultValue="defaultSelected" class="selected"
-        :size="options && options.size ? options.size : 'default'"
+    <a-select :style="[styles]" class="selected"
+        :size="size ? size : 'default'"
+        :placeholder="placeholder"
+        @select="handleSelect"
     >
         <!-- <a-select-option value="any">Any</a-select-option> -->
-        <a-select-option class="selected-item" v-for="(item, i) in selects" :key="i" :value="item.key" >
-            <i v-if="options && options.icon" :class="options.icon"></i>
-            <span v-if="options && options.text">{{ options.text }}</span>
+        <a-select-option class="selected-item" v-for="item in selects" :key="item.key" :value="item.value" >
+            <i v-if="icon" :class="icon"></i>
+            <span v-if="text">{{ text }}</span>
             <span>{{ item.value }}</span>
         </a-select-option>
     </a-select>
@@ -15,17 +17,22 @@ export default {
     name: 'Selected',
     props: {
         selects: { type: Array, default: () => [] },
-        options: { 
-            type: Object, default: () => {} 
-            // options maybe text or icon render
-            // icon is class fontawesome: ex -> fas fa-bed
-            // size: 'large'
-        },
-        styles: { type: Object, default: () => {} }
+        icon: { type: String },
+        text: { type: String },
+        size: { type: String },
+        placeholder: { type: String },
+        firstSelected: { type: Boolean, default: false },
+        styles: { type: Object, default: () => {} },
+        onSelected: { type: Function }
+    },
+    methods: {
+        handleSelect(value, { key }) {
+            this.onSelected({ code: key, data: value })
+        }
     },
     computed: {
-        defaultSelected() {
-            return this.selects.length > 0 ? this.selects[0].key : '';
+        onDefaultSelected() {
+            return this.firstSelected ? this.selects[0].key : false;
         }
     }
 }

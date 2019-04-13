@@ -14,13 +14,18 @@ export default {
   data () {
     return {
       city: devConfig.city,
-      district: devConfig.district
+      district: devConfig.district,
+
     }
   },
   methods: {
     ...mapActions({
       firstLoading: 'user/firstLoading'
-    })
+    }),
+
+    onSelected(value) {
+      console.log(value);
+    }
   },
   mounted() {
     this.$Progress.start();
