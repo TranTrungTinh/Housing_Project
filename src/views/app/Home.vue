@@ -7,15 +7,23 @@ import { CardHire } from '@/components/card-hire';
 import { Thumbnail } from '@/components/thumbnail';
 
 import { devConfig } from '@/configs/env/development';
+import { getCitiesByCode, getDistrictsByCode } from '@/helpers/readLocation.js';
 import { mapActions } from 'vuex';
 
 export default {
   components: { Selected, CardHire, Thumbnail },
   data () {
     return {
-      city: devConfig.city,
-      district: devConfig.district,
-
+      address: {
+        city: {
+            code: '79',
+            data: ''
+        },
+        district: {
+            code: '',
+            data: ''
+        }
+      }
     }
   },
   methods: {
@@ -23,8 +31,20 @@ export default {
       firstLoading: 'user/firstLoading'
     }),
 
-    onSelected(value) {
-      console.log(value);
+    onSelectedCity({ code, data }) {
+      Object.assign(this.address.city, { code, data })
+    },
+    onSelectedDistrict({ code, data }) {
+      Object.assign(this.address.district, { code, data })
+    }
+  },
+  computed: {
+    getCities() {
+      return getCitiesByCode(this.address.city.code)
+    },
+    getDistricts() {
+        if(!this.address.city.code) return [];
+        return getDistrictsByCode(this.address.city.code)
     }
   },
   mounted() {

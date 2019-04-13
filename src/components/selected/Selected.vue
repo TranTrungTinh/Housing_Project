@@ -1,7 +1,8 @@
 <template>
-    <a-select :style="[styles]" class="selected"
+    <a-select :style="[styles]" class="selected" 
         :size="size ? size : 'default'"
         :placeholder="placeholder"
+        :value="onSetSelected"
         @select="handleSelect"
     >
         <!-- <a-select-option value="any">Any</a-select-option> -->
@@ -23,7 +24,8 @@ export default {
         placeholder: { type: String },
         firstSelected: { type: Boolean, default: false },
         styles: { type: Object, default: () => {} },
-        onSelected: { type: Function }
+        onSelected: { type: Function },
+        setSelected: { type: Object, default: () => {}}
     },
     methods: {
         handleSelect(value, { key }) {
@@ -32,9 +34,22 @@ export default {
     },
     computed: {
         onDefaultSelected() {
-            return this.firstSelected ? this.selects[0].key : false;
+            return this.firstSelected ? this.selects[0].value : null;
+        },
+        onSetSelected() {
+            if(this.setSelected && this.setSelected.data) {
+                const { code, data } = this.setSelected;
+                this.onSelected({ code, data })
+                return this.setSelected.data;
+            } else {
+                if(!this.firstSelected) return null;
+                
+                const { key, value } = this.selects[0];
+                this.onSelected({ code: key, data: value })
+                return value;
+            }
         }
-    }
+    },
 }
 </script>
 <style src="./Selected.scss" lang="scss" scoped></style>

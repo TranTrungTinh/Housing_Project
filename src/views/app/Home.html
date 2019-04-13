@@ -7,17 +7,25 @@
                 <div class="home-welcome--form__selected">
                     <div class="home-welcome--form__selected-tp">
                         <i class="fas fa-map-marker-alt"></i>
-                        <!-- <Selected :selects="city.data" /> -->
+                        <Selected 
+                            :selects="getCities"
+                            :firstSelected="true"
+                            :onSelected="onSelectedCity"
+                            :size="'large'"
+                            :setSelected="address.city"
+                        />
                     </div>
                     <div class="home-welcome--form__selected-top">
                         <span>Tôi đang tìm phòng tại:</span>
                         <div>
-                            <!-- <Selected 
-                                :selects="district.data" 
-                                :options="district.options" 
+                            <Selected 
+                                :selects="getDistricts"
+                                :firstSelected="true"
+                                :onSelected="onSelectedDistrict"
+                                :size="'large'"
+                                :setSelected="address.district"
                                 :styles="{color: '#FD3D76', fontSize: '26px'}"
-                                :onSelected="onSelected"
-                            /> -->
+                            />
                         </div>
                     </div>
                     <div class="home-welcome--form__selected-search">

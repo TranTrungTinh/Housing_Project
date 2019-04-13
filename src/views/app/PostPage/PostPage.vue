@@ -41,7 +41,7 @@
                         </div>
                      </a-col>
                      <a-col :xs="24" :lg="12">
-                        <FirstStep v-if="step === 1"/>
+                        <FirstStep v-if="step === 1" :onData="getDataFirstStep" />
                         <SecondStep v-if="step === 2"/>
                      </a-col>
                  </a-row>
@@ -60,6 +60,7 @@
     </section>
 </template>
 <script>
+import { mapActions } from 'vuex';
 import { FirstStep, SecondStep } from '@/components/steps';
 
 export default {
@@ -72,6 +73,9 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            setPostAddress: 'post/setPostAddress'
+        }),
         next() {
             if(this.step > 5) return;
             this.step++
@@ -79,6 +83,9 @@ export default {
         pre() {
             if(this.step === 1) return;
             this.step--
+        },
+        getDataFirstStep(address) {
+            this.setPostAddress(address);
         }
     }
 }
