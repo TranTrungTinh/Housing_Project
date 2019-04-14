@@ -42,7 +42,7 @@ export default {
                 this.onSelected({ code, data })
                 return this.setSelected.data;
             } else {
-                if(!this.firstSelected) return null;
+                if(!this.firstSelected) return this.placeholder;
                 
                 const { key, value } = this.selects[0];
                 this.onSelected({ code: key, data: value })

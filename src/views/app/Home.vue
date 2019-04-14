@@ -6,7 +6,6 @@ import { Selected } from '@/components/selected';
 import { CardHire } from '@/components/card-hire';
 import { Thumbnail } from '@/components/thumbnail';
 
-import { devConfig } from '@/configs/env/development';
 import { getCitiesByCode, getDistrictsByCode } from '@/helpers/readLocation.js';
 import { mapActions } from 'vuex';
 

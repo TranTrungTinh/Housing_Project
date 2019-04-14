@@ -24,4 +24,9 @@ body {
   margin-left: 20px;
   margin-right: 20px;
 }
+/* custom theme ant vue design */
+.ant-input-group-addon {
+    color: #3E74FF !important;
+    font-weight: 500;
+}
 </style>

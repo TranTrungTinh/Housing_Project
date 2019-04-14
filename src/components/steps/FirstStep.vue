@@ -118,6 +118,8 @@ export default {
         }
 
         &__title {
+            display: inline-block;
+            padding-bottom: 5px;
             font-size: 18px;
         }
     }
