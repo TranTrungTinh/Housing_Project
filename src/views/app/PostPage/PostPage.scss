@@ -36,11 +36,11 @@
     }
 
     &--content {
-        max-height: 60vh;
+        height: 70vh;
         margin: 50px 0 0 0;
         padding: 50px 30px;
         border: 1px dashed #e9e9e9;
-        border-radius: 6px;
+        border-radius: 6px 6px 0 0;
         background-color: #fafafa;
         width: 100%;
         overflow-y: scroll;
@@ -74,10 +74,13 @@
     }
 
     &--control {
-        padding: 20px 10%;
+        padding: 10px 5%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border: 1px dashed #e9e9e9;
+        border-radius: 0 0 6px 6px;
+        background-color: #fff;
 
         &__back {
             color: #FD3D76;

@@ -26,7 +26,17 @@ body {
 }
 /* custom theme ant vue design */
 .ant-input-group-addon {
-    color: #3E74FF !important;
+    color: #3E74FF;
     font-weight: 500;
 }
+
+.ant-upload-drag-icon i {
+  font-size: 32px;
+  color: #3E74FF !important;
+}
+
+.ant-upload-drag-container .ant-upload-text {
+  margin-top: 8px;
+  color: #3E74FF !important;
+} 
 </style>

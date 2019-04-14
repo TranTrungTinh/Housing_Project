@@ -120,7 +120,8 @@ export default {
         &__title {
             display: inline-block;
             padding-bottom: 5px;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 20px;
         }
     }
 }

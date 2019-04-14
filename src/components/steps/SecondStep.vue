@@ -85,7 +85,7 @@ export default {
             font-size: 24px;
             font-weight: 600;
             color: #3E74FF;
-            margin: 40px 0 10px 0;
+            margin: 40px 0 20px 0;
         }
 
     }
@@ -95,7 +95,8 @@ export default {
         &__title {
             display: inline-block;
             padding-bottom: 5px;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 20px;
         }
     }
 }
