@@ -8,6 +8,7 @@ import Layout from '@/views/app/layout/Layout';
 import HomePage from '@/views/app/Home'
 import User from '@/views/app/User';
 import Post from '@/views/app/PostPage/PostPage';
+import DetailPage from '@/views/app/DetailPage/Detail';
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
           path: '/post',
           component: Post,
           name: 'PostPage'
+        },
+        {
+          path: '/detail',
+          component: DetailPage,
+          name: 'DetailPage'
         }
       ]
     } 
